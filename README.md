@@ -1,5 +1,6 @@
 ### ttag-po-loader
 Webpack loader for .po files for ttag
+
 A working proof of concept for https://github.com/ttag-org/ttag-webpack-plugin/issues/8
 
 #### Installation
@@ -7,6 +8,14 @@ A working proof of concept for https://github.com/ttag-org/ttag-webpack-plugin/i
 ```console
 > yarn add --dev https://github.com/dimaqq/ttag-po-loader
 > yarn add --dev ttag-cli
+```
+
+### Use
+```js
+import {addLocale} from "ttag";
+import en_GB from "somewhere/en-GB.po";
+
+addLocale("en-GB`", en_GB);
 ```
 
 #### Webpack rules
@@ -17,7 +26,6 @@ draft.module.rules.push({
   loader: "ttag-po-loader",
 });
 ```
-
 
 P.S. make sure `.po` file extension is not covered by `file-loader`, for example for CRA, override:
 
