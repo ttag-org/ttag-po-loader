@@ -1,6 +1,6 @@
 {
   "name": "ttag-po-loader",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Webpack loader for .po files for ttag",
   "main": "index.js",
   "repository": "https://github.com/dimaqq/ttag-po-loader",
