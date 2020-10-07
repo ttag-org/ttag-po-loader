@@ -6,7 +6,7 @@ A working proof of concept for https://github.com/ttag-org/ttag-webpack-plugin/i
 #### Installation
 
 ```console
-> yarn add --dev ttag-po-loader
+yarn add --dev ttag-po-loader
 ```
 
 #### Use
