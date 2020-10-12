@@ -1,9 +1,15 @@
 {
   "name": "ttag-po-loader",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Webpack loader for .po files for ttag",
   "main": "index.js",
-  "repository": "https://github.com/dimaqq/ttag-po-loader",
+  "repository": "https://github.com/ttag-org/ttag-po-loader",
   "author": "Dima Tisnek <dimaqq@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ttag-cli": "^1"
+  },
+  "publishConfig": {
+    "tag": "experimental"
+  }
 }

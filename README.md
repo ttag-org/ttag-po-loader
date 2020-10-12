@@ -1,16 +1,15 @@
 ### ttag-po-loader
-Webpack loader for .po files for ttag
+Webpack loader for Portable Object (`.po`) files for `ttag`.
 
 A working proof of concept for https://github.com/ttag-org/ttag-webpack-plugin/issues/8
 
 #### Installation
 
 ```console
-> yarn add --dev https://github.com/dimaqq/ttag-po-loader
-> yarn add --dev ttag-cli
+yarn add --dev ttag-po-loader
 ```
 
-### Use
+#### Use
 ```js
 import {addLocale} from "ttag";
 import en_GB from "somewhere/en-GB.po";
@@ -21,15 +20,13 @@ addLocale("en-GB`", en_GB);
 #### Webpack rules
 
 ```js
-draft.module.rules.push({
-  test: [/\.po$/],
-  loader: "ttag-po-loader",
+// 1. Tell webpack how to load PO files
+config.module.rules.push({
+test: [/\.po$/],
+loader: "ttag-po-loader",
 });
-```
 
-P.S. make sure `.po` file extension is not covered by `file-loader`, for example for CRA, override:
-
-```js
-const loaders = draft.module.rules.find(r => r.oneOf).oneOf;
-loaders.find(o => o?.loader?.match(/file-loader/)).exclude.push(/[.]po$/);
+// 2. Exempt PO files from default rules if you use create-react-app
+const loaders = config.module.rules.find(r => r.oneOf).oneOf;
+loaders.find(l => l?.loader?.match(/file-loader/)).exclude.push(/[.]po$/);
 ```
